@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rice Blast Detection</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F4F4F4;
+			font-family: 'Montserrat', sans-serif;
+			color: #707571;
+			font-size: 16px;
+			line-height: 1.5;
+			text-align: center;
+		}
+		header {
+			background-color: #090909;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		h1 {
+			font-size: 3rem;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+			letter-spacing: 2px;
+		}
+		form {
+			margin-top: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		input[type=file] {
+			padding: 10px;
+			margin-bottom: 20px;
+			border: none;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,.2);
+			font-size: 1rem;
+			line-height: 1.5;
+			color: #444;
+		}
+		input[type=submit] {
+			background-color: #1a1a1a;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+			transition: background-color .3s ease-in-out;
+			font-size: 1rem;
+			line-height: 1.5;
+			letter-spacing: 1px;
+		}
+		input[type=submit]:hover {
+			background-color: #282828;
+		}
+		.footer {
+			background-color: #444;
+			color: #fff;
+			padding: 20px;
+			font-size: .8rem;
+			line-height: 1.5;
+			margin-top: 50px;
+		}
+		.footer a {
+			color: #fff;
+			text-decoration: none;
+			transition: color .3s ease-in-out;
+		}
+		.footer a:hover {
+			color: #363736;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Rice Blast Detection</h1>
+	</header>
+	<main>
+		<form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+			<label for="image-upload" class="upload-label">Choose an image</label>
+			<input id="image-upload" type="file" name="image" accept="image/*" required>
+			<button type="submit" value="Predict" >Predict</button>
+		</form>
+	</main>
+	<footer class="footer">
+		<p>DETECTION- <a href="https://www.example.com">Design and Development of Novel Framework towards the early detection of rice blast diseases in rice using AI and Ml</a></p>
+	</footer>
+</body>
+	</html>
